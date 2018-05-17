@@ -11,7 +11,7 @@ app.use(cors());
 app.post('/register', (req, res) => {
     res.send({
         //req.body.email returning undefined, why?
-        message: `${req.body.email}`
+        message: `Hello ${req.body.email}! Welcome!`
     });
 });
 
