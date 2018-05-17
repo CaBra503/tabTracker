@@ -26,7 +26,6 @@ export default {
   name: 'Register',
   data () {
     return {
-      msg: 'Welcome to My Vue.js App',
       email: '',
       password: ''
     }
