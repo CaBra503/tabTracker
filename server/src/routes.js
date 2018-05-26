@@ -1,9 +1,9 @@
-module.exports = (app) => {
+const AuthenticationController = require('./controllers/AuthenticationController');
+const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy');	
 
-	app.post('/register', (req, res) => {
-		res.send({
-		//Is being returned when the button is clicked
-			message: `You have been Registered ${req.body.email}`
-		});
-	});
+module.exports = (app) => {
+	app.post('/register',
+		AuthenticationControllerPolicy.register,
+		AuthenticationController.register
+	);
 };

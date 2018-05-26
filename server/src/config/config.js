@@ -7,10 +7,8 @@ module.exports = {
 		options: {
 			dialect: process.env.DIALECT || 'sqlite',
 			host: process.env.host || 'localhost',
-			storage:'../tabTracker.sqlite',
+			storage:'../tabTracker.sqlite3',
 			operatorsAliases: false 
-
 		}
-
 	}
 };

@@ -1,10 +1,11 @@
 module.exports = {
     "env": {
         "browser": true,
+        "commonjs": true,
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:vue/recommended"],
     "parserOptions": {
         "sourceType": "module"
     },
@@ -24,6 +25,16 @@ module.exports = {
         "semi": [
             "error",
             "always"
+        ],
+        "no-console":[
+            "error",{
+                "allow":[
+                    "log",
+                    "warn",
+                    "alert",
+                    "*"
+                ]
+            }
         ]
     }
 };
