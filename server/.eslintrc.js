@@ -7,8 +7,8 @@ module.exports = {
     },
     "extends": ["eslint:recommended", "plugin:vue/recommended"],
     "parserOptions": {
-        "sourceType": "module"
-    },
+            "sourceType": "module"
+        },
     "rules": {
         "indent": [
             "error",
@@ -33,7 +33,7 @@ module.exports = {
                     "warn",
                     "alert",
                     "*"
-                ]
+                ] 
             }
         ]
     }
