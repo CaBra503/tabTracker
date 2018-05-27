@@ -1,13 +1,11 @@
 const {User} = require('../models');
-/*
-Currently The error is not firing.
-*/
+
 module.exports = {
-	async register (req, res) {
+	async register(req, res) {
 		try {
 			const user = await User.create(req.body)
 			res.send(user.toJSON());
-		} catch (err) {
+		} catch (error) {
 			res.status(400).send({
 				error: 'This email account is already in use.'
 			});
