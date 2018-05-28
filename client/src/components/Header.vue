@@ -1,7 +1,7 @@
 
 <template>
-	<v-toolbar fixed class="cyan">
-        <v-tootlbar-title class="ml;-4">
+	<v-toolbar fixed class="aquamarine">
+        <v-tootlbar-title class="ml-4">
             Tab Tracker
         </v-tootlbar-title>
         </v-toolbar>
