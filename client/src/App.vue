@@ -29,37 +29,9 @@ export default {
 	text-align: center;
 	color: #2c3e50;
 	margin-top: 60px;
-}
-.aquamarine {
-	background-color: rgb(101, 224, 255);
-}
-.input-group--text-field input {
-	
-}
-.toolbar__title {
+ }
+.error {
+	background-color: rgb(255, 79, 79);
 	color: white;
 }
-
-.btn__content{
-	color: #fff;
-}
-.email.input-group {
-	position: relative;
-	top: 0px;
-	left: 0;
-	height: 50px;
-}
-.password.input-group {
-	position: relative;
-	top: 0px;
-	left: 0;
-	height: 50px;
-	
-}
-.title {
-	font-weight: bold;
-	color: white;
-	vertical-align: middle;
-	margin: auto;
-	}
 </style>

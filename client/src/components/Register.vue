@@ -1,37 +1,36 @@
 
 <template>
-	<v-container fluid>
-	<v-layout >
-		<v-flex xs12 sm6 offset-sm3>
-			<div class="white elevation-6">
-				<v-flex>
-				<v-toolbar class="aquamarine" >
-					
-					<v-toolbar-title class="title">
-						Guitar Tab Tracker
-					</v-toolbar-title>
+	<v-app>
+		<v-container fluid>
+			<v-layout>
+				<v-flex xs12 sm6 offset-sm3>
+					<div class="white elevation-6">
+						<v-flex>
+							<v-toolbar dense class="light-blue accent-2">
+								<v-toolbar-title class="title">
+									Guitar Tab Tracker
+								</v-toolbar-title>
+							</v-toolbar>
+						</v-flex>
+						<div class="pl-5 pr-5 pb-1 pt-1">
+							<v-text-field class= "email" type = "email" hint="Enter a valid email" id="email" name="email" v-model="email" label="Email" />
 
-				</v-toolbar>
+							<br>
+
+							<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password" />
+							
+							
+							<div class="error mt-4" v-html="error" />
+							<br>
+							<v-btn large class="light-blue accent-2" @click="register">
+								Register
+							</v-btn>
+						</div>
+					</div>
 				</v-flex>
-				<div class="pl-5 pr-5 pb-1 pt-1">
-					<v-text-field class= "email" type = "email" hint="Enter a valid email" id="email" name="email" v-model="email" label="Email">
-					</v-text-field>
-
-					<br>
-
-					<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password">
-					</v-text-field>
-					
-					<div class="error mt-4" v-html="error" />
-					<br>
-					<v-btn large class="aquamarine" @click="register">
-						Register
-					</v-btn>
-				</div>
-			</div>
-		</v-flex>
-	</v-layout>
-	</v-container>
+			</v-layout>
+		</v-container>
+	</v-app>
 </template>
 	
 
@@ -63,41 +62,16 @@ export default {
 </script>
 <!-- Add "scoped " attribute to limit CSS to this component only -->
 <style scoped>
-.aquamarine {
-	background-color: rgb(101, 224, 255);
+.btn {
+	color: #fff;
+		text-shadow: #040507 1px 1px 0;
+
 }
-.error {
-	background-color: rgb(255, 79, 79);
-	color: white;
-}
-.warning {
-	color: yellow;
+.title {
+	color: #fff;
+	text-shadow: #040507 1px 1px 0;
 }
 
-[type=email] {
-	background-color: white;
-	color: black;
-	font-weight: bold;
-}
-[type=password] {
-	background-color: white;
-	color: black;	
-}
-.email.input-group {
-	position: relative;
-	top: 0px;
-	left: 0;
-	height: 50px;
-	border-bottom: 1px solid black;
-}
-.password.input-group {
-	position: relative;
-	top: 0px;
-	left: 0;
-	height: 50px;
-	border-bottom: 1px solid black;
-}
-.toolbar__title{
-	background-color: aquamarine;
-}
+
+
 </style>
