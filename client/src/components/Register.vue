@@ -1,37 +1,37 @@
- /*eslint-disable*/
-<template>
-	<v-layout row>
-		<v-flex xs6 offset-xs3>
-			<div class="grey elevation-3 ml-5 mr-5">
-				<v-toolbar flat dense class="cyan" dark>
-					<v-toolbar-title class="title" style="">Register</v-toolbar-title>
-				</v-toolbar>
 
+<template>
+	<v-container fluid>
+	<v-layout >
+		<v-flex xs12 sm6 offset-sm3>
+			<div class="white elevation-6">
+				<v-flex>
+				<v-toolbar class="aquamarine" >
+					
+					<v-toolbar-title class="title">
+						Guitar Tab Tracker
+					</v-toolbar-title>
+
+				</v-toolbar>
+				</v-flex>
 				<div class="pl-5 pr-5 pb-1 pt-1">
-					<input
-						class="mt-2 mb-2"
-						type="email"
-						name="email"
-						v-model="email"
-						placeholder="email" />
+					<v-text-field class= "email" type = "email" hint="Enter a valid email" id="email" name="email" v-model="email" label="Email">
+					</v-text-field>
+
 					<br>
-					<input
-						class="mt-2"
-						type="password"
-						name="password"
-						v-model="password"
-						placeholder="password" /> 
+
+					<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password">
+					</v-text-field>
+					
+					<div class="error mt-4" v-html="error" />
 					<br>
-					<div class="error" v-html="error" />
-					<br>
-					<v-btn class="cyan" 
-					@click="register">
+					<v-btn large class="aquamarine" @click="register">
 						Register
 					</v-btn>
 				</div>
 			</div>
 		</v-flex>
 	</v-layout>
+	</v-container>
 </template>
 	
 
@@ -52,8 +52,8 @@ export default {
 			try {
 				await AuthenticationService.register({
 					email: this.email,
-					password: this.password,
-				}); 
+					password: this.password
+				});
 			} catch (error) {
 				this.error = error.response.data.error;
 			}
@@ -61,28 +61,43 @@ export default {
 	}
 };
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Add "scoped " attribute to limit CSS to this component only -->
 <style scoped>
-.error{
-	color: red;
+.aquamarine {
+	background-color: rgb(101, 224, 255);
 }
-.title{
-	position:relative;
-	right: -250px;
-	bottom: 0px;
-	font-weight: bold;
-	font-size: 14px;
+.error {
+	background-color: rgb(255, 79, 79);
+	color: white;
 }
-[type=email]{
-	border:1px solid black;
+.warning {
+	color: yellow;
+}
+
+[type=email] {
 	background-color: white;
 	color: black;
 	font-weight: bold;
 }
-[type=password]{
-	border:1px solid black;
+[type=password] {
 	background-color: white;
-	color: black;
-	font-weight: bold;
+	color: black;	
+}
+.email.input-group {
+	position: relative;
+	top: 0px;
+	left: 0;
+	height: 50px;
+	border-bottom: 1px solid black;
+}
+.password.input-group {
+	position: relative;
+	top: 0px;
+	left: 0;
+	height: 50px;
+	border-bottom: 1px solid black;
+}
+.toolbar__title{
+	background-color: aquamarine;
 }
 </style>

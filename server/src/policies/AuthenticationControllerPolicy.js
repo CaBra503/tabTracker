@@ -25,14 +25,13 @@ module.exports = {
 				break;
 			//password failure.
 			case 'password':
-			<!-- eslint-disable-ignore-next-line -->
 				res.status(400).send({
-					error: `The password provided is in valid.<br>It MUST be only of the following: AlphabeticalCharacters, Lowercase, Upercase, numeric.<br>Additionally, The password can only be 8 long, and no longer than 32 characters.`
-				})
-			break
+					error: 'The password provided is in valid. /\n/ It MUST be only of the following: AlphabeticalCharacters, Lowercase, Upercase, numeric. <br> Additionally, The password can only be 8 long, and no longer than 32 characters.'
+				});
+				break;
 			default: res.status(400).send({
-					error: 'Invalid registration information.'
-				})
+				error: 'Invalid registration information.'
+			});
 			}
 		} else {
 			//if no error, proceed to next and register user.
