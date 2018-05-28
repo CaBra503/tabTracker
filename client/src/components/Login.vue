@@ -8,7 +8,7 @@
 						<v-flex>
 							<v-toolbar dense class="light-blue accent-2">
 								<v-toolbar-title class="title">
-									Guitar Tab Tracker
+									Guitar Tab Tracker Login
 								</v-toolbar-title>
 							</v-toolbar>
 						</v-flex>

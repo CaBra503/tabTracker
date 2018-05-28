@@ -2,8 +2,22 @@
 <!-- eslint-disable -->
 	<div class="hello">
 		<h1>{{ msg }}</h1>
+		<h2>{{ msgTwo }}</h2>
 		<h2>Essential Links</h2>
 		<ul>
+			<li>
+				<a href="https://github.com/cabra503/" target="_blank">
+				<strong>My Github!</strong>
+				</a>
+			</li>
+			<li>
+				<a
+					href="https://twitter.com/PdxDev503"
+					target="_blank">
+					<strong> My Twitter!</strong>
+				</a>
+			</li>
+			<br>
 			<li>
 				<a
 					href="https://vuejs.org"
@@ -46,38 +60,50 @@
 				</a>
 			</li>
 		</ul>
+		<br>
 		<h2>Ecosystem</h2>
 		<ul>
 			<li>
-				<a
-					href="http://router.vuejs.org/"
-					target="_blank"
-				>
-					vue-router
+				<a href="http://router.vuejs.org/" target="_blank" >
+						vue-router
 				</a>
 			</li>
 			<li>
-				<a
-					href="http://vuex.vuejs.org/"
-					target="_blank"
-				>
+				<a href="http://vuex.vuejs.org/" target="_blank">
 					vuex
 				</a>
 			</li>
 			<li>
-				<a
-					href="http://vue-loader.vuejs.org/"
-					target="_blank"
-				>
+				<a href="http://vue-loader.vuejs.org/" target="_blank">
 					vue-loader
 				</a>
 			</li>
 			<li>
-				<a
-					href="https://github.com/vuejs/awesome-vue"
-					target="_blank"
-				>
+				<a href="https://github.com/vuejs/awesome-vue" target="_blank">
 					awesome-vue
+				</a>
+			</li>
+			<br>
+			<h3>Built with</h3>
+			<br>
+			<li>
+				<a href="https://github.com/vuejs/awesome-vue" target="_blank">
+					Node
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/vuejs/awesome-vue" target="_blank">
+					Express
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/vuejs/awesome-vue" target="_blank">
+					Vue
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/vuejs/awesome-vue" target="_blank">
+					MySQL
 				</a>
 			</li>
 		</ul>
@@ -89,7 +115,8 @@ export default {
 	name: 'HelloWorld',
 	data () {
 		return {
-			msg: 'Welcome to Your Vue.js App'
+			msg: 'Welcome to Guitar Tab Tracker.',
+			msgTwo: 'This application is currently under construction.'
 		};
 	}
 };
