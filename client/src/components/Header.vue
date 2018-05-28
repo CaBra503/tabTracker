@@ -21,9 +21,14 @@
 		<v-spacer></v-spacer>
 
 		<v-toolbar-items>
-				<v-btn @click="navigateTo({name: 'register'})">
-					Sign Up
-				</v-btn>
+			<v-btn @click="navigateTo({name: 'register'})">
+				Sign Up
+			</v-btn>
+
+			<v-btn @click="navigateTo({name: 'login'})">
+				Log
+			</v-btn>
+		
 		</v-toolbar-items>
 	</v-toolbar>
 </template> 
