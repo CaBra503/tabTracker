@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
 		hooks: {
 			beforeCreate: hashPassword,
 			beforeUpdate: hashPassword,
-			// beforeSave: hashPassword
+			beforeSave: hashPassword
 			/*Runs hash pass twice. On Creation and storing in db */
 		}
 	});

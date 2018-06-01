@@ -14,6 +14,7 @@ module.exports = {
 		try {
 			//on register create a user in the db with the http request body
 			const user = await User.create(req.body)
+			console.log('user being registered:', user.toJSON());
 			res.send(user.toJSON());
 			//if email is already in use throw error.
 		} catch (error) {
@@ -21,14 +22,13 @@ module.exports = {
 				error: 'This email account is already in use.'
 			})
 		}
-		console.log('user being registered:', user.toJSON());
 	},
 	//login endpoint. requires request and response.
 	async login (req, res) {
 		try {
 			//user email and user password in request body
 			const{email, password} = req.body;
-			// search the given email against the emails stored in db
+			// find the given email against the emails stored in db
 			const user = await User.findOne({
 				where: {
 					email: email 
@@ -59,7 +59,7 @@ module.exports = {
 				user: userJson,
 					token: jwtSignUser(userJson)
 				})
-			} catch (err) {
+		} catch (err) {
 				//Throw Generic error if login endpoint fails
 				console.log('**generic error**');
 				res.status(500).send({
