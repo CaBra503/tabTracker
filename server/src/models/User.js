@@ -1,16 +1,19 @@
 const Promise = require('bluebird');
 const bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'));
 
-function hashPassword(user, options) {
+function hashPassword (user, options) {
 	const SALT_FACTOR = 8;
 	
 	if (!user.changed('password')){
 		return;
 	}
-	return bcrypt.genSaltAsync(SALT_FACTOR).then(salt => bcrypt.hashAsync(user.password, salt, null)).then(hash => {
-		user.setDataValue('password', hash);
-		console.log('hashed pass');
-	});
+	return bcrypt
+		.genSaltAsync(SALT_FACTOR)
+		.then(salt => bcrypt
+			.hashAsync(user.password, salt, null)).then(hash => {
+			user.setDataValue('password', hash);
+			console.log('hashed pass');
+		});
 }
 
 //This is the User model.
@@ -25,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
 		hooks: {
 			beforeCreate: hashPassword,
 			beforeUpdate: hashPassword,
-			beforeSave: hashPassword
+			// beforeSave: hashPassword
+			/*Runs hash pass twice. On Creation and storing in db */
 		}
 	});
 
