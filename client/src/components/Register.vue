@@ -17,7 +17,8 @@
 
 							<br>
 
-							<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password" />
+							<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password"
+							autocomplete="new-password" />
 							
 							
 							<div class="error mt-4" v-html="error" />

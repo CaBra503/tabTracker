@@ -14,7 +14,7 @@ module.exports = {
 		try {
 			//on register create a user in the db with the http request body
 			const user = await User.create(req.body)
-			console.log('user being registered:', user.toJSON());
+		console.log('user being registered:', user.toJSON());
 			res.send(user.toJSON());
 			//if email is already in use throw error.
 		} catch (error) {
@@ -31,9 +31,15 @@ module.exports = {
 			// find the given email against the emails stored in db
 			const user = await User.findOne({
 				where: {
-					email: email 
+					email: email
 				}
 			});
+			/*
+			Gives a verbose log of the user object.
+			console.log('user logging in: ', user)
+			
+			*/
+			
 			
 			if (!user) {
 				//check if user matches if not.
@@ -44,6 +50,7 @@ module.exports = {
 			} 
 			//testing if the password matches the stored password.
 			const isPasswordValid = await user.comparePassword(password);
+			console.log(isPasswordValid);
 			
 			if (!isPasswordValid) {
 				//is password valid, if not
@@ -54,20 +61,18 @@ module.exports = {
 			}
 			//convert userdata to JsonFormat send userJson and jwtToken to db
 			const userJson = user.toJSON();
-			console.log('user information:', userJson);
+			console.log('user information requested for login:', userJson);
 			res.send({
 				user: userJson,
 					token: jwtSignUser(userJson)
-				})
-		} catch (err) {
-				//Throw Generic error if login endpoint fails
-				console.log('**generic error**');
-				res.status(500).send({
-					error: 'An error has occured trying to log in'
 				});
-			}
-			
-			console.log(user.toJSON())
+		} catch (err) {
+			//Throw Generic error if login endpoint fails
+		console.log('**generic error**');
+			res.status(500).send({
+				error: 'An error has occured trying to log in'
+			});
 		}
-		// End of login
+	}
 }
+	// End of login

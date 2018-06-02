@@ -15,7 +15,7 @@ module.exports = {
 		const {error, value} = Joi.validate(req.body, schema);
 		//returns Error if there is an error.
 		if (error) {
-			//Gives the key that failed, either Email or password.
+		//Gives the key that failed, either Email or password.
 			switch(error.details[0].context.key) {
 			//email failure.
 			case 'email':
@@ -29,6 +29,7 @@ module.exports = {
 					error: 'The password provided is in valid. /\n/ It MUST be only of the following: AlphabeticalCharacters, Lowercase, Upercase, numeric. <br> Additionally, The password can only be 8 long, and no longer than 32 characters.'
 				});
 				break;
+			//the default response is this.
 			default: res.status(400).send({
 				error: 'Invalid registration information.'
 			});
