@@ -13,14 +13,15 @@
 							</v-toolbar>
 						</v-flex>
 						<div class="pl-5 pr-5 pb-1 pt-1">
-							<v-text-field class= "email" type = "email" hint="Enter a valid email" id="email" name="email" v-model="email" label="Email" />
+							<form name="tab-tracker-register-form" autocomplete="off">
+								<v-text-field class= "email" type = "email" hint="Enter a valid email" id="email" name="email" v-model="email" label="Email" />
 
+								<br>
+
+								<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password"
+								autocomplete="new-password" />
+							</form>
 							<br>
-
-							<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password"
-							autocomplete="new-password" />
-							
-							
 							<div class="error mt-4" v-html="error" />
 							<br>
 							<v-btn large class="light-blue accent-2" @click="register">
