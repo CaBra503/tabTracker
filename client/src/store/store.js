@@ -12,24 +12,29 @@ export default new Vuex.Store({
 	strict: true,
 	//state are the states of our app we want to track.
 	state: {
-		token: null
-		// user: null,
+		token: null,
+		user: null
 		// isUserLoggedIn: false
 	},
 	//mutations
 	// inside mutations we take a state then pass it a token
-	mutations: {
+	mutation: {
 		setToken (state, token) {
 			state.token = token;
+		},
+		setUser (state, user) {
+			state.user = user;
 		}
+
 	},
-	//vue ex
-	//actions mutations and your state
+	//actions
 	// inside actions is where you do async logic
 	actions: {
 		setToken ({commit}, token) {
 			commit('setToken', token);
+		},
+		setUser({commit}, user){
+			commit('setUser', user);
 		}
-
 	}
 });

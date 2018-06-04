@@ -14,13 +14,17 @@ module.exports = {
 		try {
 			//on register create a user in the db with the http request body
 			const user = await User.create(req.body)
-		console.log('user being registered:', user.toJSON());
-			res.send(user.toJSON());
+			const userJson = user.toJSON();
+		console.log('user being registered:', userJson);
+			res.send({
+				user: userJson,
+				token: jwtSignUser(userJson)
+			});
 			//if email is already in use throw error.
-		} catch (error) {
-			res.status(401).send({
+		} catch (err) {
+			res.status(400).send({
 				error: 'This email account is already in use.'
-			})
+			});
 		}
 	},
 	//login endpoint. requires request and response.
@@ -39,8 +43,6 @@ module.exports = {
 			console.log('user logging in: ', user)
 			
 			*/
-			
-			
 			if (!user) {
 				//check if user matches if not.
 				console.log('**incorrect User information.**');
@@ -75,4 +77,4 @@ module.exports = {
 		}
 	}
 }
-	// End of login
+	// End of logic
