@@ -33,7 +33,8 @@
 </template>
 	
 
-<script>			
+<script>	
+// Importing authentication services
 import AuthenticationService from '@/services/AuthenticationService';
 export default {
 	name: 'Login',
@@ -48,11 +49,14 @@ export default {
 		//eslint-disable-next-line
 		async login () {
 			try {
+				// keeps track of the response returned. Username / Token
 				const response = await AuthenticationService.login({
 					email: this.email,
 					password: this.password
 				});
+				//updates state to token
 				this.$store.dispatch('setToken', response.data.token);
+				//updates state for user
 				this.$store.dispatch('setUser', response.data.user);
 			} catch (error) {
 				this.error = error.response.data.error;

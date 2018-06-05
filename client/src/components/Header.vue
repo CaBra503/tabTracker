@@ -19,13 +19,15 @@
 			<!-- TODO: Tie button to view user account -->
 		<!-- <v-spacer><v-btn>Account</v-btn></v-spacer> -->
 		<v-spacer></v-spacer>
-
 		<v-toolbar-items>
-			<v-btn @click="navigateTo({name: 'register'})">
+			<v-btn v-if="!$store.state.isUserLoggedIn"
+			@click="navigateTo({name: 'register'})">
 				Sign Up
 			</v-btn>
 
-			<v-btn @click="navigateTo({name: 'login'})">
+			<v-btn
+			v-if="!$store.state.isUserLoggedIn"
+			@click="navigateTo({name: 'login'})">
 				Log
 			</v-btn>
 		

@@ -13,14 +13,19 @@ export default new Vuex.Store({
 	//state are the states of our app we want to track.
 	state: {
 		token: null,
-		user: null
-		// isUserLoggedIn: false
+		user: null,
+		isUserLoggedIn: false
 	},
 	//mutations
-	// inside mutations we take a state then pass it a token
-	mutation: {
+	// setting username and token states
+	mutations: {
 		setToken (state, token) {
 			state.token = token;
+			if(token) {
+				state.isUserLoggedIn = true;
+			} else {
+				state.isUserLoggedIn = false;
+			}
 		},
 		setUser (state, user) {
 			state.user = user;

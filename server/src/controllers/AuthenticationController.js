@@ -1,8 +1,9 @@
 const {User} = require('../models');
 const jwt = require('jsonwebtoken');
 const config = require('../config/config');
-
+//JsonWebToken helper method to generate the jwt-token
 function jwtSignUser (user) {
+	//sets the time of expiration of token
 	const ONE_WEEK = 60 * 60 * 24 * 7;
 	return jwt.sign(user, config.authentication.jwtSecret, {
 		expiresIn: ONE_WEEK
@@ -13,7 +14,7 @@ module.exports = {
 	async register (req, res) {
 		try {
 			//on register create a user in the db with the http request body
-			const user = await User.create(req.body)
+			const user = await User.create(req.body);
 			const userJson = user.toJSON();
 		console.log('user being registered:', userJson);
 			res.send({

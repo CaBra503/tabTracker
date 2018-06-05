@@ -48,15 +48,18 @@ export default {
 		};
 	},
 	methods: {
-		//eslint-disable-next-line
 		async register () {
 			try {
+				//listening to the endpoint for response returned. Username/Token
 				const response = await AuthenticationService.register({
 					email: this.email,
 					password: this.password
 				});
+				// Sets the token state.
 				this.$store.dispatch('setToken', response.data.token);
+				//sets the user state.
 				this.$store.dispatch('setUser', response.data.user);
+				//returns error if there is an error.
 			} catch (error) {
 				this.error = error.response.data.error;
 			}
