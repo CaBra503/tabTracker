@@ -19,16 +19,30 @@
 			<!-- TODO: Tie button to view user account -->
 		<!-- <v-spacer><v-btn>Account</v-btn></v-spacer> -->
 		<v-spacer></v-spacer>
+		
 		<v-toolbar-items>
-			<v-btn v-if="!$store.state.isUserLoggedIn"
+			<v-btn
+			flat
+			dark
+			v-if="!$store.state.isUserLoggedIn"
 			@click="navigateTo({name: 'register'})">
 				Sign Up
 			</v-btn>
 
-			<v-btn
+			<v-btn 
+			flat
+			dark
 			v-if="!$store.state.isUserLoggedIn"
 			@click="navigateTo({name: 'login'})">
-				Log
+				Login
+			</v-btn>
+			
+			<v-btn 
+			flat
+			dark
+			v-if="$store.state.isUserLoggedIn"
+			@click="navigateTo({name: 'logout'})">
+				Logout
 			</v-btn>
 		
 		</v-toolbar-items>
@@ -41,6 +55,14 @@ export default {
 	methods:{
 		navigateTo (route) {
 			this.$router.push(route);
+		},
+		logout () {
+			this.$store.dispatch('setToken', null);
+			this.$store.dispatch('setUser', null);
+			//todo: redirect to homepage
+			this.$router.push({
+				name: 'root'
+			})
 		}
 	}
 };

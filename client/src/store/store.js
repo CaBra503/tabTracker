@@ -20,6 +20,7 @@ export default new Vuex.Store({
 	// setting username and token states
 	mutations: {
 		setToken (state, token) {
+			//tests curent states token against token for the user, if the users token = the token we have in db the user is logged in, otherwise they are not.
 			state.token = token;
 			if(token) {
 				state.isUserLoggedIn = true;
@@ -27,6 +28,7 @@ export default new Vuex.Store({
 				state.isUserLoggedIn = false;
 			}
 		},
+		//user state
 		setUser (state, user) {
 			state.user = user;
 		}
@@ -35,9 +37,11 @@ export default new Vuex.Store({
 	//actions
 	// inside actions is where you do async logic
 	actions: {
+		//explicitly commiting token
 		setToken ({commit}, token) {
 			commit('setToken', token);
 		},
+		//explicitly commiting username.
 		setUser({commit}, user){
 			commit('setUser', user);
 		}
