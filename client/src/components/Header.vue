@@ -12,7 +12,11 @@
 			<!--
 				TODO: Fix up Browse button
 				-->
-				<v-btn flat light class="ml-2">
+				<v-btn 
+				flat 
+				light
+				@click="navigateTo({name: 'songs'})" 
+				class="ml-2">
 				Browse
 			</v-btn>
 		</v-toolbar-items>
@@ -29,14 +33,6 @@
 				Sign Up
 			</v-btn>
 
-			<v-btn 
-			flat
-			dark
-			v-if="!$store.state.isUserLoggedIn"
-			@click="navigateTo({name: 'login'})">
-				Login
-			</v-btn>
-			
 			<v-btn 
 			flat
 			dark
@@ -62,7 +58,7 @@ export default {
 			//todo: redirect to homepage
 			this.$router.push({
 				name: 'root'
-			})
+			});
 		}
 	}
 };

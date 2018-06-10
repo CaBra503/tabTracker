@@ -38,8 +38,19 @@
 
 <script>			
 import AuthenticationService from '@/services/AuthenticationService';
+import Panel from '@/components/Panel';
+
 export default {
 	name: 'Register',
+	components: {
+		Panel
+	},
+	metaInfo:{
+		title: 'Registration',
+		titleTemplate: (titleChunk) => {
+			return titleChunk ? `${titleChunk} | Guitar Tab Tracker` : 'Tab Tracker';
+		}
+	},
 	data () {
 		return {
 			email: '',

@@ -112,11 +112,18 @@
 
 <script>
 export default {
-	name: 'HelloWorld',
+	name: 'Root',
+	metaInfo:{
+		title: 'Root',
+		titleTemplate: (titleChunk) => {
+			return titleChunk ? `${titleChunk} | Guitar Tab Tracker` : 'Tab Tracker';
+		}
+	},
 	data () {
 		return {
-			msg: 'Welcome to Guitar Tab Tracker.',
-			msgTwo: 'This application is currently under construction.'
+			msg: 'App Loaded',
+			msgTwo:'Hello World',
+			msgThree:'Testing'
 		};
 	}
 };

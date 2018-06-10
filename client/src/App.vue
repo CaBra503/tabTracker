@@ -1,13 +1,11 @@
 <template>
 	<div id="app">
-		<v-app>
-			<page-header />
-			<main>
-				<v-container fluid>
-					<router-view />
-				</v-container>
-			</main>
-		</v-app>
+		<page-header />
+		<main>
+			<v-container fluid>
+				<router-view />
+			</v-container>
+		</main>
 	</div>
 </template>
 
@@ -18,6 +16,17 @@ export default {
 	components: {
 		PageHeader
 	},
+	metaInfo: {
+		//sets icon for tabs
+		link: [
+			{
+				rel:'icon',
+				href:'https://vuejs.org/images/logo.png',
+				type:'image/png',
+				alt: 'Vue.js Icon'
+			}
+		]
+	}
 };
 </script>
 

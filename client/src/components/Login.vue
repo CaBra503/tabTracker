@@ -1,43 +1,46 @@
 
 <template>
-	<v-app>
-		<v-container fluid>
-			<v-layout>
-				<v-flex xs12 sm6 offset-sm3>
-					<div class="white elevation-6">
-						<v-flex>
-							<v-toolbar dense class="light-blue accent-2">
-								<v-toolbar-title class="title">
-									Guitar Tab Tracker Login
-								</v-toolbar-title>
-							</v-toolbar>
-						</v-flex>
-						<div class="pl-5 pr-5 pb-1 pt-1">
-							<form name="tab-tracker-login-form">
-								<v-text-field class= "email" type = "email" hint="Enter a valid email" id="email" name="email" v-model="email" label="Email" />
-								<br>
-								<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password" />
-							</form>
+	<v-layout>
+		<v-flex xs12 sm6 offset-sm3>
+			<panel title="Login">
+				<div class="white elevation-6">
+					<v-flex>
+						<v-toolbar dense class="light-blue accent-2">
+							<v-toolbar-title class="title">
+								Guitar Tab Tracker Login
+							</v-toolbar-title>
+						</v-toolbar>
+					</v-flex>
+					<div class="pl-5 pr-5 pb-1 pt-1">
+						<form name="tab-tracker-login-form">
+							<v-text-field class= "email" type = "email" hint="Enter a valid email" id="email" name="email" v-model="email" label="Email" />
 							<br>
-							<div class="error mt-4" v-html="error" />
-							<br>
-							<v-btn large class="light-blue accent-2" @click="login">
-								Login
-							</v-btn>
-						</div>
+							<v-text-field class= "password" type= "password" hint="Enter a valid password" id="password" name="password" v-model="password" label="Password" />
+						</form>
+						<br>
+						<div class="error mt-4" v-html="error" />
+						<br>
+						<v-btn large class="light-blue accent-2" @click="login">
+							Login
+						</v-btn>
 					</div>
-				</v-flex>
-			</v-layout>
-		</v-container>
-	</v-app>
+				</div>
+			</panel>
+		</v-flex>
+	</v-layout>
 </template>
 	
 
 <script>	
 // Importing authentication services
 import AuthenticationService from '@/services/AuthenticationService';
+import Panel from '@/components/Panel';
+
 export default {
 	name: 'Login',
+	components: {
+		Panel
+	},
 	data () {
 		return {
 			email: '',
