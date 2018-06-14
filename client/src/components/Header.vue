@@ -9,9 +9,9 @@
 			</span>
 		</v-toolbar-title>
 		<v-toolbar-items>
-			<!--
-				TODO: Fix up Browse button
-				-->
+<!--
+TODO: Fix up Browse button
+-->
 				<v-btn 
 				flat 
 				light

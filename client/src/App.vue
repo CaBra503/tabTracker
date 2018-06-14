@@ -43,4 +43,7 @@ export default {
 	background-color: rgb(255, 79, 79);
 	color: white;
 }
+.danger-alert = {
+	color: red;
+}
 </style>

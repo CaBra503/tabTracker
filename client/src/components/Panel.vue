@@ -9,7 +9,9 @@
 								<v-toolbar-title>
 									{{title}}
 								</v-toolbar-title>
+								<slot name="action" />
 							</v-toolbar>
+
 						</v-flex>
 						<div class="pl-5 pr-5 pb-1 pt-1">
 							<slot>

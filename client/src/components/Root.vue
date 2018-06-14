@@ -2,19 +2,18 @@
 <!-- eslint-disable -->
 	<div class="hello">
 		<h1>{{ msg }}</h1>
-		<h2>{{ msgTwo }}</h2>
 		<h2>Essential Links</h2>
 		<ul>
 			<li>
 				<a href="https://github.com/cabra503/" target="_blank">
-				<strong>My Github!</strong>
+				<strong>Creators Github</strong>
 				</a>
 			</li>
 			<li>
 				<a
 					href="https://twitter.com/PdxDev503"
 					target="_blank">
-					<strong> My Twitter!</strong>
+					<strong> Creators Twitter!</strong>
 				</a>
 			</li>
 			<br>
@@ -121,9 +120,7 @@ export default {
 	},
 	data () {
 		return {
-			msg: 'App Loaded',
-			msgTwo:'Hello World',
-			msgThree:'Testing'
+			msg: 'Guitar Tab Tracker'
 		};
 	}
 };

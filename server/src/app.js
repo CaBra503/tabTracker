@@ -21,7 +21,8 @@ require('./routes')(app);
 //defining the routes for the webapp url
 
 //To drop all tables in DB sync({force: true})
-sequelize.sync().then(() => {
+sequelize.sync(
+).then(() => {
 	//port the application is listening on
 	app.listen(config.port);
 	console.log(`server is on Port: ${config.port}`);

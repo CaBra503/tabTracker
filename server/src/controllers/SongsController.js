@@ -6,7 +6,7 @@ module.exports = {
 			const songs = await Song.findAll({
 				limit: 10
 			});
-			console.log('sent songs: ', songs)
+			// console.log('sent songs: ', songs)
 			res.send(songs);
 		} catch (err) {
 			//Throw Generic error if login endpoint fails

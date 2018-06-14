@@ -14,7 +14,7 @@ module.exports = (app) => {
 		AuthenticationController.login
 	);
 
-	//songs Enpoints
+	// browse songs Enpoints
 	app.get('/songs',
 		SongsController.index
 	);
