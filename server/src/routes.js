@@ -13,6 +13,10 @@ module.exports = (app) => {
 	app.post('/login',
 		AuthenticationController.login
 	);
+	//route for showing songs.
+	app.get('/songs/:songId',
+		SongsController.show
+	);
 
 	// browse songs Enpoints
 	app.get('/songs',

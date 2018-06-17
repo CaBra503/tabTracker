@@ -22,6 +22,7 @@ require('./routes')(app);
 
 //To drop all tables in DB sync({force: true})
 sequelize.sync(
+	
 ).then(() => {
 	//port the application is listening on
 	app.listen(config.port);
