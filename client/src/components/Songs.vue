@@ -101,7 +101,7 @@ export default {
 	font-size: 18px;
 }
 .album-image { 
-	/* width: 70%; */
+	width: 70%;
 	margin: 0 auto;
 	padding: 50px 50px;
 	position: relative;

@@ -1,8 +1,8 @@
 <template>
 	<div id="app">
-		<page-header app />
+		<page-header/>
 		<main app>
-			<v-container fluid>
+			<v-container>
 				<router-view />
 			</v-container>
 		</main>

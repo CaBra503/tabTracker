@@ -1,0 +1,93 @@
+ <template>
+<v-container grid-list-md text-xs-center fluid>
+	<v-layout row wrap class="container">
+		<v-flex xs8>
+			<song-metadata :song="song" />
+		</v-flex>	
+		<v-flex xs12>
+			<panel title="tabs" class="tabs">
+				<v-layout>
+					<v-flex column wrap>
+					{{song.tab}}
+					</v-flex>
+				</v-layout>
+			</panel> 
+		</v-flex>
+			<v-flex xs8 cyan class="accent-2">
+			<panel title="lyrics" class="lyrics" light>
+				<v-layout>
+					<v-flex column wrap>
+					{{song.lyrics}}
+					</v-flex>
+				</v-layout>
+			</panel>
+		</v-flex> 
+	</v-layout>
+</v-container>
+</template>
+
+
+<script>
+import SongMetadata from '@/components/ViewSong/SongMetadata';
+import SongsService from '@/services/SongsService';
+import Panel from '@/components/Panel';
+export default {
+	metaInfo: {
+		title: 'Song Details',
+		titleTemplate: (titleChunk) => {
+			return titleChunk ? `${titleChunk} | View Song` : 'Song Details';
+		}
+	},
+	components: {
+		Panel,
+		SongMetadata
+	},
+	data() {
+		return {
+			song: {}
+		};
+	},
+	async mounted () {
+		try {
+			const songId = this.$store.state.route.params.songId;
+			this.song = (await SongsService.show(songId)).data;
+		}	catch (err) {
+			console.log(err);
+		}
+	},
+};
+</script>
+
+<style scoped>
+.container{
+	padding-top: 20px;
+}
+ .song-container{
+position: relative;
+top: 0;
+right: 290px;
+}
+.tabs{
+	position:relative;
+	top: -445px;
+}
+.lyrics{
+	position:relative;
+	top: -2292px;
+	left: 680px;
+}
+.song-artist{
+	font-size: 24px;
+}
+.song-genre{
+	font-size: 18px;
+}
+.song-image{
+	width: 100%
+}
+.album-image { 
+	width:  100%;
+	margin: 0 auto;
+
+}
+</style>

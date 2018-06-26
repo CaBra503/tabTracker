@@ -3,53 +3,55 @@
 		<v-flex xs-4>
 			<panel title="Song Metadata">
 				<v-text-field required
-				:rules="[required]" 
-				label="Title" 
-				v-model="song.title"
-			></v-text-field>
+					:rules="[required]" 
+					label="Title" 
+					v-model="song.title">
+				</v-text-field>
 				<v-text-field required
-				:rules="[required]" 
-				label="Artist" 
-				v-model="song.artist"
-				></v-text-field>
+					:rules="[required]" 
+					label="Artist" 
+					v-model="song.artist">
+				</v-text-field>
 				<v-text-field required
-				:rules="[required]" 
-				label="Album" 
-				v-model="song.album"
-				></v-text-field>
+					:rules="[required]" 
+					label="Album" 
+					v-model="song.album">
+				</v-text-field>
 				<v-text-field required
-				:rules="[required]" 
-				label="Genre" 
-				v-model="song.genre"
-				></v-text-field>
+					:rules="[required]" 
+					label="Genre" 
+					v-model="song.genre">
+				</v-text-field>
 				<v-text-field required
-				:rules="[required]" 
-				label="Album Image Url" 
-				v-model="song.albumImageURL"
-				></v-text-field>
+					:rules="[required]" 
+					label="Album Image Url" 
+					v-model="song.albumImageURL">
+				</v-text-field>
 				<v-text-field required
-				:rules="[required]" 
-				label="YouTube Id" 
-				v-model="song.youtubeId">
+					:rules="[required]" 
+					label="YouTube Id" 
+					v-model="song.youtubeId">
 				</v-text-field>
 			</panel>
 		</v-flex>
 		<v-flex sm-8>
 			<panel title="Song Structure">
 				<v-text-field multi-line
-				label="Lyrics" 
-				v-model="song.lyrics"
-				></v-text-field>
+					label="Lyrics" 
+					v-model="song.lyrics">
+				</v-text-field>
 				<v-text-field multi-line
-				label="Tabs" 
-				v-model="song.tab">
+					label="Tabs" 
+					v-model="song.tab">
 				</v-text-field>
 			</panel>
-			<div class="danger-alert" v-if="error">{{ error }}</div>
-		<v-btn class="cyan"
-		@click="create">
-			Create Song
-		</v-btn>
+			<div class="danger-alert"
+				v-if="error">{{ error }}
+			</div>
+			<v-btn class="cyan"
+				@click="create">
+					Create Song
+			</v-btn>
 		</v-flex>
 	</v-layout>
 </template>
@@ -81,7 +83,6 @@ export default {
 			if(!areAllFieldsFull){
 				this.error = 'Please fill in the fields';
 			}
-
 			try {
 				await SongsService.post(this.song);
 				console.log('songs Created');
