@@ -1,27 +1,15 @@
  <template>
 <v-container grid-list-md text-xs-center fluid>
-	<v-layout row wrap class="container">
-		<v-flex xs8>
+	<v-layout>
+		<v-flex xs12>
 			<song-metadata :song="song" />
 		</v-flex>	
+		<!-- <v-flex xs12>
+			<lyrics :song="song" />
+		</v-flex> -->
 		<v-flex xs12>
-			<panel title="tabs" class="tabs">
-				<v-layout>
-					<v-flex column wrap>
-					{{song.tab}}
-					</v-flex>
-				</v-layout>
-			</panel> 
+			<you-tube :youtubeId="song.youtubeId" />
 		</v-flex>
-			<v-flex xs8 cyan class="accent-2">
-			<panel title="lyrics" class="lyrics" light>
-				<v-layout>
-					<v-flex column wrap>
-					{{song.lyrics}}
-					</v-flex>
-				</v-layout>
-			</panel>
-		</v-flex> 
 	</v-layout>
 </v-container>
 </template>
@@ -31,6 +19,9 @@
 import SongMetadata from '@/components/ViewSong/SongMetadata';
 import SongsService from '@/services/SongsService';
 import Panel from '@/components/Panel';
+import YouTube from './YouTube';
+import Lyrics from './Lyrics';
+
 export default {
 	metaInfo: {
 		title: 'Song Details',
@@ -40,7 +31,9 @@ export default {
 	},
 	components: {
 		Panel,
-		SongMetadata
+		SongMetadata,
+		YouTube,
+		Lyrics
 	},
 	data() {
 		return {
@@ -59,8 +52,15 @@ export default {
 </script>
 
 <style scoped>
-.container{
+/* .container{
 	padding-top: 20px;
+}
+.youtube {
+	position: relative;
+	bottom: 1990px;
+	right: 390px;
+	width: 100%;
+	height: 100%;
 }
  .song-container{
 position: relative;
@@ -71,11 +71,11 @@ right: 290px;
 	position:relative;
 	top: -445px;
 }
-.lyrics{
+ .lyrics{
 	position:relative;
-	top: -2292px;
+	top: -550px;
 	left: 680px;
-}
+} 
 .song-artist{
 	font-size: 24px;
 }
@@ -89,5 +89,5 @@ right: 290px;
 	width:  100%;
 	margin: 0 auto;
 
-}
+} */
 </style>

@@ -1,7 +1,7 @@
 <template>
 	<panel title="Song Metadata" class="song-container">
 	<v-layout>
-		<v-flex>
+		<v-flex lg12>
 		<div>
 			<div class="song-title">
 			{{song.title}}
@@ -38,12 +38,13 @@ export default {
 .container{
 	padding-top: 20px;
 }
- .song-container{
-position: relative;
-top: 0;
-right: 290px;
 
+ .song-container{
+ position: relative;
+top: 0;
+right: 290px; 
 }
+
 .tabs{
 	position:relative;
 	top: -445px;
@@ -67,4 +68,5 @@ right: 290px;
 	margin: 0 auto;
 
 }
+
 </style>
